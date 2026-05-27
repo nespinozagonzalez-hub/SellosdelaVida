@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SELLOS DE LA VIDA — 60 MIN EDITION</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--g:#00FF41;--gd:#009922;--am:#FFB000;--r:#FF0040;--cy:#00FFFF;--pu:#CC00FF;--bg:#000800;--pan:#020D02;--brd:#003300;--tx:#00CC33;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--g);font-family:'Share Tech Mono',monospace;min-height:100vh;overflow-x:hidden;cursor:crosshair;}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.18) 2px,rgba(0,0,0,.18) 4px);pointer-events:none;z-index:9999;}
+body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at center,transparent 50%,rgba(0,0,0,.92) 100%);pointer-events:none;z-index:9998;}
+.screen{display:none;min-height:100vh;padding:16px;animation:sIn .4s ease;}
+.screen.active{display:flex;flex-direction:column;align-items:center;justify-content:center;}
+@keyframes sIn{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
+.panel{background:var(--pan);border:2px solid var(--gd);padding:clamp(16px,3vw,30px);max-width:820px;width:100%;position:relative;box-shadow:0 0 28px rgba(0,255,65,.1),inset 0 0 20px rgba(0,255,65,.03);}
+.panel::before{content:'';position:absolute;top:4px;left:4px;right:4px;bottom:4px;border:1px solid rgba(0,255,65,.07);pointer-events:none;}
+h1,h2{font-family:'Press Start 2P',monospace;line-height:1.6;}
+h1{font-size:clamp(12px,2.3vw,22px);color:var(--am);text-shadow:0 0 18px rgba(255,176,0,.5);margin-bottom:18px;letter-spacing:2px;}
+h2{font-size:clamp(9px,1.7vw,14px);color:var(--cy);text-shadow:0 0 12px rgba(0,255,255,.4);margin-bottom:13px;}
+.sub{font-size:clamp(7px,1.1vw,9px);color:var(--gd);letter-spacing:4px;margin-bottom:24px;font-family:'Press Start 2P',monospace;text-align:center;}
+p{line-height:1.9;font-size:clamp(11px,1.5vw,14px);margin-bottom:11px;}
+.btn{background:transparent;border:2px solid var(--g);color:var(--g);font-family:'Press Start 2P',monospace;font-size:clamp(7px,1.2vw,10px);padding:12px 24px;cursor:pointer;letter-spacing:2px;transition:all .2s;margin:6px;}
+.btn:hover{background:var(--g);color:#000;box-shadow:0 0 18px rgba(0,255,65,.5);transform:scale(1.03);}
+.btn-r{border-color:var(--r);color:var(--r);}.btn-r:hover{background:var(--r);color:#000;box-shadow:0 0 18px rgba(255,0,64,.5);}
+.btn-a{border-color:var(--am);color:var(--am);}.btn-a:hover{background:var(--am);color:#000;box-shadow:0 0 18px rgba(255,176,0,.5);}
+.btn-c{border-color:var(--cy);color:var(--cy);}.btn-c:hover{background:var(--cy);color:#000;}
+.btn-p{border-color:var(--pu);color:var(--pu);}.btn-p:hover{background:var(--pu);color:#000;}
+.inp{background:transparent;border:2px solid var(--gd);border-bottom-color:var(--g);color:var(--g);font-family:'Share Tech Mono',monospace;font-size:18px;padding:12px 18px;width:100%;max-width:360px;outline:none;text-align:center;letter-spacing:3px;transition:all .3s;}
+.inp:focus{border-color:var(--cy);box-shadow:0 0 14px rgba(0,255,255,.3);}
+.div{border:none;border-top:1px solid var(--brd);margin:16px 0;}
+/* PORTAL */
+.portal-wrap{position:relative;width:170px;height:170px;margin:22px auto;}
+.portal{width:170px;height:170px;border-radius:50%;background:conic-gradient(from 0deg,#CC00FF,#00FFFF,#FF0040,#00FF41,#FFB000,#CC00FF);animation:pSpin 3s linear infinite;}
+.portal::after{content:'';position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#120025,#06000f);}
+.portal-s{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:42px;z-index:2;animation:pSym 2s ease-in-out infinite;}
+@keyframes pSpin{to{transform:rotate(360deg)}}
+@keyframes pSym{0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.18)}}
+/* VILLAIN */
+.vbox{border:2px solid var(--pu);padding:18px;margin:16px 0;background:rgba(204,0,255,.05);position:relative;box-shadow:0 0 18px rgba(204,0,255,.18);}
+.vbox::before{content:'⚠ NEXUS ⚠';position:absolute;top:-11px;left:18px;background:var(--bg);padding:0 9px;color:var(--pu);font-family:'Press Start 2P',monospace;font-size:8px;letter-spacing:3px;}
+.vface{font-size:clamp(38px,6.5vw,60px);display:block;text-align:center;margin-bottom:10px;animation:gFace 4s infinite;}
+@keyframes gFace{0%,87%,93%,97%,100%{transform:none;filter:none}88%{transform:translateX(-5px) skewX(-6deg);filter:hue-rotate(90deg)}89%{transform:translateX(5px) skewX(4deg);filter:hue-rotate(180deg) brightness(2)}90%{transform:none;filter:hue-rotate(270deg)}94%{transform:translateX(-3px);filter:hue-rotate(45deg)}96%{transform:none;filter:none}}
+.ntext{color:var(--pu);font-size:clamp(11px,1.5vw,13px);line-height:1.95;text-shadow:0 0 8px rgba(204,0,255,.4);}
+/* NARRATIVE */
+.narr{font-size:clamp(11px,1.6vw,14px);color:var(--am);line-height:2.05;text-shadow:0 0 7px rgba(255,176,0,.22);}
+/* HUD */
+.hud{width:100%;max-width:820px;display:flex;justify-content:space-between;align-items:center;padding:7px 14px;border:1px solid var(--brd);margin-bottom:11px;font-size:9px;font-family:'Press Start 2P',monospace;flex-wrap:wrap;gap:7px;}
+.hud-n{color:var(--cy);}.hud-s{color:var(--am);}.hud-st{color:var(--r);animation:blk 1.8s ease-in-out infinite;}
+@keyframes blk{0%,100%{opacity:1}50%{opacity:.3}}
+/* ACT INDICATOR */
+.act-ind{font-family:'Press Start 2P',monospace;font-size:8px;color:var(--pu);letter-spacing:3px;text-align:center;margin-bottom:4px;}
+/* PROGRESS */
+.pbar-w{width:100%;background:#001100;border:1px solid var(--brd);height:9px;margin:10px 0;}
+.pbar{height:100%;background:linear-gradient(90deg,var(--gd),var(--g));transition:width 1s;box-shadow:0 0 7px rgba(0,255,65,.4);}
+.pdots{display:flex;gap:7px;justify-content:center;margin:8px 0;flex-wrap:wrap;}
+.pdot{width:13px;height:13px;border:2px solid var(--brd);border-radius:50%;transition:all .5s;position:relative;}
+.pdot.done{background:var(--am);border-color:var(--am);box-shadow:0 0 7px rgba(255,176,0,.6);}
+.pdot.act1{border-color:#333;}
+.pdot.act2{border-color:#220033;}
+.pdot.act3{border-color:#002233;}
+/* SEAL MAP */
+.seal-map{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:15px 0;width:100%;}
+.seal-card{border:2px solid var(--brd);padding:12px 8px;text-align:center;transition:all .3s;background:rgba(0,255,65,.02);cursor:not-allowed;}
+.seal-card.avail{border-color:var(--gd);cursor:pointer;}
+.seal-card.avail:hover{border-color:var(--g);box-shadow:0 0 13px rgba(0,255,65,.3);transform:translateY(-2px);}
+.seal-card.done-c{border-color:var(--am);background:rgba(255,176,0,.04);cursor:default;animation:sGlow 2s ease-in-out infinite;}
+.seal-card.locked{border-color:#111;opacity:.5;}
+@keyframes sGlow{0%,100%{box-shadow:0 0 4px rgba(255,176,0,.2)}50%{box-shadow:0 0 16px rgba(255,176,0,.7)}}
+.sicon{font-size:clamp(20px,4vw,30px);display:block;margin-bottom:7px;}
+.snum{font-family:'Press Start 2P',monospace;font-size:7px;color:var(--am);margin-bottom:4px;letter-spacing:2px;}
+.stitle{font-size:clamp(6px,1vw,8px);font-family:'Press Start 2P',monospace;line-height:1.7;}
+.sact-sep{grid-column:1/-1;text-align:center;font-family:'Press Start 2P',monospace;font-size:7px;letter-spacing:4px;color:var(--brd);border-top:1px solid var(--brd);padding-top:8px;margin-top:4px;}
+/* QUIZ */
+.quiz-q{font-size:clamp(11px,1.7vw,13px);color:var(--cy);margin-bottom:16px;line-height:1.9;padding:13px;border-left:3px solid var(--cy);}
+.quiz-opts{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+.qopt{background:transparent;border:1px solid var(--brd);color:var(--tx);padding:10px 15px;cursor:pointer;font-family:'Share Tech Mono',monospace;font-size:clamp(10px,1.4vw,13px);text-align:left;transition:all .2s;line-height:1.6;}
+.qopt:hover:not(:disabled){border-color:var(--g);color:var(--g);background:rgba(0,255,65,.05);}
+.qopt.ok{border-color:var(--g);background:rgba(0,255,65,.13);color:var(--g);}
+.qopt.bad{border-color:var(--r);background:rgba(255,0,64,.1);color:var(--r);}
+.qscore{font-family:'Press Start 2P',monospace;font-size:9px;color:var(--am);text-align:center;margin:9px 0;}
+/* WORD SEARCH 12x12 */
+.wsgrid{display:inline-grid;grid-template-columns:repeat(12,1fr);gap:2px;margin:10px auto;font-family:'Press Start 2P',monospace;}
+.wsc{width:clamp(22px,3.3vw,32px);height:clamp(22px,3.3vw,32px);display:flex;align-items:center;justify-content:center;font-size:clamp(6px,.9vw,10px);border:1px solid var(--brd);cursor:pointer;transition:all .15s;color:var(--gd);user-select:none;}
+.wsc:hover{border-color:var(--cy);color:var(--cy);}
+.wsc.sel{background:rgba(0,255,255,.12);color:var(--cy);border-color:var(--cy);}
+.wsc.fnd{background:rgba(0,255,65,.18);color:var(--g);border-color:var(--g);}
+.wswords{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:10px 0;}
+.wstag{border:1px solid var(--gd);padding:4px 8px;font-size:8px;font-family:'Press Start 2P',monospace;color:var(--gd);letter-spacing:2px;}
+.wstag.fnd{border-color:var(--am);color:var(--am);text-decoration:line-through;}
+/* MATCHING */
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0;}
+.mctitle{font-size:8px;color:var(--am);margin-bottom:9px;letter-spacing:3px;font-family:'Press Start 2P',monospace;}
+.mitem{border:1px solid var(--brd);padding:10px;margin-bottom:6px;cursor:pointer;font-size:clamp(9px,1.3vw,12px);transition:all .2s;line-height:1.6;}
+.mitem:hover:not(.mdone){border-color:var(--cy);color:var(--cy);}
+.mitem.msel{border-color:var(--am);color:var(--am);background:rgba(255,176,0,.07);}
+.mitem.mdone{border-color:var(--g);color:var(--g);background:rgba(0,255,65,.07);cursor:default;}
+.mitem.merr{border-color:var(--r);color:var(--r);}
+/* ORDERING */
+.oslot{border:1px dashed var(--brd);padding:8px 13px;margin-bottom:5px;font-size:clamp(9px,1.3vw,12px);display:flex;align-items:center;gap:9px;min-height:40px;}
+.onum{color:var(--am);font-family:'Press Start 2P',monospace;font-size:8px;min-width:16px;}
+.obank{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:13px 0;}
+.ochip{border:1px solid var(--cy);color:var(--cy);padding:7px 11px;cursor:pointer;font-size:clamp(9px,1.2vw,11px);font-family:'Share Tech Mono',monospace;transition:all .2s;}
+.ochip:hover{background:rgba(0,255,255,.08);}
+.ochip.used{opacity:.16;cursor:default;pointer-events:none;}
+/* FILL IN */
+.fsent{font-size:clamp(11px,1.6vw,13px);line-height:2.8;margin:12px 0;color:var(--tx);}
+.fblank{background:transparent;border:none;border-bottom:2px solid var(--cy);color:var(--cy);font-family:'Share Tech Mono',monospace;font-size:clamp(11px,1.6vw,13px);width:120px;text-align:center;outline:none;padding:2px 6px;}
+/* FEEDBACK */
+.fb{padding:12px 16px;margin:11px 0;font-family:'Press Start 2P',monospace;font-size:9px;text-align:center;letter-spacing:2px;animation:fbIn .4s ease;}
+.fb.ok{border:2px solid var(--g);color:var(--g);background:rgba(0,255,65,.07);text-shadow:0 0 9px rgba(0,255,65,.5);}
+.fb.err{border:2px solid var(--r);color:var(--r);background:rgba(255,0,64,.07);text-shadow:0 0 9px rgba(255,0,64,.4);}
+.fb.warn{border:2px solid var(--am);color:var(--am);background:rgba(255,176,0,.07);}
+@keyframes fbIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+/* TIMER */
+.timer{font-family:'Press Start 2P',monospace;font-size:clamp(14px,2.8vw,22px);text-align:center;margin:9px 0;}
+.timer.urgent{color:var(--r);text-shadow:0 0 15px rgba(255,0,64,.7);animation:blk .6s ease-in-out infinite;}
+.timer.ok-t{color:var(--am);text-shadow:0 0 12px rgba(255,176,0,.5);}
+/* VICTORY */
+.vring{width:140px;height:140px;border-radius:50%;background:conic-gradient(from 0deg,#001100,#00FF41,#001100);animation:vR 1.8s linear infinite;margin:18px auto;box-shadow:0 0 38px rgba(0,255,65,.5);}
+@keyframes vR{to{transform:rotate(360deg)}}
+/* MISC */
+.scene-tag{font-family:'Press Start 2P',monospace;font-size:7px;color:var(--brd);letter-spacing:5px;margin-bottom:20px;text-transform:uppercase;}
+.stage-tag{font-family:'Press Start 2P',monospace;font-size:7px;color:var(--pu);letter-spacing:4px;margin-bottom:9px;}
+.act-banner{font-family:'Press Start 2P',monospace;font-size:clamp(10px,1.8vw,16px);text-align:center;letter-spacing:3px;margin:15px 0;}
+.wblink{animation:blk .6s ease-in-out infinite;color:var(--r);font-family:'Press Start 2P',monospace;font-size:9px;letter-spacing:3px;}
+.ctr{text-align:center;}
+.scroll{max-height:56vh;overflow-y:auto;padding-right:4px;}
+.scroll::-webkit-scrollbar{width:3px;}
+.scroll::-webkit-scrollbar-thumb{background:var(--gd);}
+#flash{position:fixed;inset:0;background:rgba(0,255,65,.07);pointer-events:none;z-index:9997;display:none;}
+@keyframes flashA{0%{opacity:0}15%{opacity:1}100%{opacity:0}}
+@media(max-width:700px){.seal-map{grid-template-columns:repeat(2,1fr);}.mgrid{grid-template-columns:1fr;}}
+@media(max-width:450px){.seal-map{grid-template-columns:repeat(2,1fr);}}
+/* ACT TRANSITION */
+.act-cin{background:linear-gradient(180deg,#000500,#0a001a);border:2px solid var(--pu);box-shadow:0 0 40px rgba(204,0,255,.3);}
+.nexus-collapse{font-size:clamp(50px,10vw,90px);display:block;text-align:center;margin:15px 0;}
+.act2-anim{animation:gFace 1.5s infinite;}
+.act3-anim{animation:gFace 0.5s infinite;}
+</style>
+</head>
+<body>
+<div id="flash"></div>
+
+<!-- ═══════════════════════════════ INTRO ════════════════════════════════ -->
+<div class="screen active" id="s-intro">
+  <div class="panel ctr" style="max-width:640px">
+    <div class="sub">// ACCESO RESTRINGIDO — NIVEL Ω //</div>
+    <div class="portal-wrap"><div class="portal"></div><div class="portal-s">🌀</div></div>
+    <h1>SELLOS<br>DE LA VIDA</h1>
+    <div class="sub">PROTOCOLO DE CIERRE DIMENSIONAL — EDICIÓN EXTENDIDA</div>
+    <hr class="div">
+    <p class="narr" id="intro-txt"></p>
+    <hr class="div">
+    <p style="color:var(--am);font-family:'Press Start 2P',monospace;font-size:9px;margin-bottom:13px;">IDENTIFICATE, AGENTE:</p>
+    <input class="inp" id="inp-name" type="text" maxlength="20" placeholder="TU NOMBRE..." autocomplete="off">
+    <br><br>
+    <button class="btn btn-a" onclick="startGame()">▶ INICIAR PROTOCOLO</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ SCENE 1 ══════════════════════════════ -->
+<div class="screen" id="s-scene1">
+  <div class="panel" style="max-width:700px">
+    <div class="scene-tag">// LABORATORIO 7 — 23:47:03 — BRECHA DETECTADA //</div>
+    <div id="s1-txt" class="narr"></div>
+    <hr class="div">
+    <div class="ctr"><button class="btn btn-r" id="s1-btn" onclick="go('s-villain1')" style="display:none">▶ CONTINUAR...</button></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ VILLAIN 1 ════════════════════════════ -->
+<div class="screen" id="s-villain1">
+  <div class="panel ctr act-cin" style="max-width:670px">
+    <div class="stage-tag">// PRIMERA TRANSMISIÓN INTERDIMENSIONAL //</div>
+    <div class="vbox">
+      <span class="vface">👁️</span>
+      <div class="ntext" id="v1-txt"></div>
+    </div>
+    <br>
+    <button class="btn btn-a" onclick="go('s-map')">▶ ABRIR MAPA DE SELLOS</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ ACT II TRANSITION ════════════════════ -->
+<div class="screen" id="s-act2">
+  <div class="panel ctr act-cin" style="max-width:680px">
+    <div class="stage-tag">// TRANSMISIÓN DE EMERGENCIA — NEXUS RESPONDE //</div>
+    <div class="act-banner" style="color:var(--pu)">⚡ ACTO II ⚡</div>
+    <div class="act-banner" style="color:var(--am);font-size:clamp(8px,1.4vw,12px)">LA BRECHA PROFUNDA</div>
+    <hr class="div">
+    <div class="vbox">
+      <span class="vface act2-anim">👁️</span>
+      <div class="ntext" id="act2-txt"></div>
+    </div>
+    <hr class="div">
+    <div class="narr" id="act2-narr"></div>
+    <br>
+    <button class="btn btn-a" onclick="go('s-map')">▶ CONTINUAR — ACTO II</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ ACT III TRANSITION ═══════════════════ -->
+<div class="screen" id="s-act3">
+  <div class="panel ctr act-cin" style="max-width:680px">
+    <div class="stage-tag">// TRANSMISIÓN FINAL — NEXUS EN EL LÍMITE //</div>
+    <div class="act-banner" style="color:var(--r)">💀 ACTO III 💀</div>
+    <div class="act-banner" style="color:var(--am);font-size:clamp(8px,1.4vw,12px)">EL JUICIO DE NEXUS</div>
+    <hr class="div">
+    <div class="vbox">
+      <span class="vface act3-anim">💀</span>
+      <div class="ntext" id="act3-txt"></div>
+    </div>
+    <hr class="div">
+    <div class="narr" id="act3-narr"></div>
+    <br>
+    <button class="btn btn-r" onclick="go('s-map')">▶ AFRONTAR EL JUICIO FINAL</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ MAP ══════════════════════════════════ -->
+<div class="screen" id="s-map">
+  <div class="hud">
+    <span class="hud-n">AGENTE: <span id="hud-name"></span></span>
+    <span class="hud-s">SELLOS: <span id="hud-cnt">0</span>/12</span>
+    <span class="act-ind" id="hud-act">ACTO I</span>
+    <span class="hud-st">⚠ PORTAL ACTIVO</span>
+  </div>
+  <div class="panel" style="max-width:820px">
+    <h2 class="ctr">▓ MAPA DE SELLOS DIMENSIONALES ▓</h2>
+    <div class="pbar-w"><div class="pbar" id="pbar" style="width:0%"></div></div>
+    <div class="pdots" id="pdots"></div>
+    <hr class="div">
+    <div class="seal-map" id="seal-map"></div>
+    <hr class="div">
+    <div class="ntext ctr" id="map-taunt" style="font-size:11px;padding:7px;"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ PUZZLE INTRO ═════════════════════════ -->
+<div class="screen" id="s-pintro">
+  <div class="panel" style="max-width:700px">
+    <div class="scene-tag" id="pi-tag"></div>
+    <h1 id="pi-title"></h1>
+    <div style="font-size:9px;color:var(--gd);font-family:'Press Start 2P',monospace;margin-bottom:12px;" id="pi-sub"></div>
+    <hr class="div">
+    <div class="narr" id="pi-txt"></div>
+    <hr class="div">
+    <div class="ctr">
+      <button class="btn btn-c" onclick="launchPuzzle()">▶ INICIAR PRUEBA</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ QUIZ SCREEN ══════════════════════════ -->
+<div class="screen" id="s-quiz">
+  <div class="panel" style="max-width:760px">
+    <h2 id="quiz-head"></h2>
+    <div style="font-size:8px;color:var(--gd);font-family:'Press Start 2P',monospace;margin-bottom:10px;" id="quiz-sub"></div>
+    <div id="quiz-timer-row" style="display:none">
+      <div class="timer" id="quiz-timer">05:00</div>
+      <div class="wblink ctr">⚠ TIEMPO LIMITADO ⚠</div>
+    </div>
+    <hr class="div">
+    <div class="qscore" id="quiz-score"></div>
+    <div class="scroll">
+      <div class="quiz-q" id="quiz-q"></div>
+      <div class="quiz-opts" id="quiz-opts"></div>
+    </div>
+    <div class="fb" id="quiz-fb" style="display:none"></div>
+    <div class="ctr" id="quiz-next-row" style="display:none">
+      <button class="btn" onclick="quizNext()">▶ SIGUIENTE</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ WORD SEARCH ══════════════════════════ -->
+<div class="screen" id="s-ws">
+  <div class="panel" style="max-width:780px">
+    <h2 id="ws-head"></h2>
+    <div style="font-size:8px;color:var(--gd);font-family:'Press Start 2P',monospace;margin-bottom:8px;" id="ws-sub"></div>
+    <hr class="div">
+    <p style="font-size:10px;color:var(--tx);">Haz clic en la primera letra y luego en la última de cada palabra.</p>
+    <div class="wswords" id="ws-words"></div>
+    <div class="ctr"><div class="wsgrid" id="ws-grid"></div></div>
+    <div class="fb" id="ws-fb" style="display:none"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ MATCHING ═════════════════════════════ -->
+<div class="screen" id="s-match">
+  <div class="panel" style="max-width:760px">
+    <h2 id="match-head"></h2>
+    <div style="font-size:8px;color:var(--gd);font-family:'Press Start 2P',monospace;margin-bottom:8px;" id="match-sub"></div>
+    <hr class="div">
+    <p style="font-size:10px;color:var(--tx);">Haz clic en un TÉRMINO y luego en su DEFINICIÓN para conectarlos.</p>
+    <div class="mgrid" id="match-grid"></div>
+    <div class="fb" id="match-fb" style="display:none"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ ORDERING ═════════════════════════════ -->
+<div class="screen" id="s-order">
+  <div class="panel" style="max-width:760px">
+    <h2 id="order-head"></h2>
+    <div style="font-size:8px;color:var(--gd);font-family:'Press Start 2P',monospace;margin-bottom:8px;" id="order-sub"></div>
+    <hr class="div">
+    <p style="font-size:10px;color:var(--tx);" id="order-inst"></p>
+    <div id="order-slots"></div>
+    <div class="obank" id="order-bank"></div>
+    <div class="ctr">
+      <button class="btn btn-r" onclick="orderReset()">↺ REINICIAR</button>
+      <button class="btn btn-c" id="order-check-btn" onclick="orderCheck()" style="display:none">▶ VERIFICAR</button>
+    </div>
+    <div class="fb" id="order-fb" style="display:none"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ FILL IN ══════════════════════════════ -->
+<div class="screen" id="s-fill">
+  <div class="panel" style="max-width:760px">
+    <h2 id="fill-head"></h2>
+    <div style="font-size:8px;color:var(--gd);font-family:'Press Start 2P',monospace;margin-bottom:8px;" id="fill-sub"></div>
+    <hr class="div">
+    <p style="font-size:10px;color:var(--tx);">Completa cada espacio en blanco con la palabra correcta.</p>
+    <div class="scroll" id="fill-sents"></div>
+    <div class="ctr" style="margin-top:16px">
+      <button class="btn btn-c" onclick="fillCheck()">▶ VERIFICAR</button>
+    </div>
+    <div class="fb" id="fill-fb" style="display:none"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ SEAL SUCCESS ═════════════════════════ -->
+<div class="screen" id="s-success">
+  <div class="panel ctr" style="max-width:660px">
+    <div class="stage-tag" id="suc-tag"></div>
+    <div style="font-size:56px;margin:16px 0;animation:sGlow 1.5s ease-in-out infinite;">🔓</div>
+    <h1 id="suc-title"></h1>
+    <hr class="div">
+    <div class="fb ok" id="suc-msg"></div>
+    <hr class="div">
+    <div class="vbox">
+      <span class="vface">👁️</span>
+      <div class="ntext" id="suc-nexus"></div>
+    </div>
+    <br>
+    <button class="btn btn-a" id="suc-btn" onclick="successNext()">▶ CONTINUAR</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ SEAL FAIL ════════════════════════════ -->
+<div class="screen" id="s-fail">
+  <div class="panel ctr" style="max-width:660px">
+    <div class="stage-tag" id="fail-tag">// PRUEBA FALLIDA //</div>
+    <div style="font-size:56px;margin:16px 0;">🔒</div>
+    <h1 style="color:var(--r);">SELLO BLOQUEADO</h1>
+    <hr class="div">
+    <div class="fb err" id="fail-msg"></div>
+    <hr class="div">
+    <div class="vbox">
+      <span class="vface">😈</span>
+      <div class="ntext" id="fail-nexus"></div>
+    </div>
+    <br>
+    <button class="btn btn-r" onclick="retry()">↺ INTENTAR DE NUEVO</button>
+    <button class="btn" onclick="go('s-map')">▶ VOLVER AL MAPA</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ VICTORY ══════════════════════════════ -->
+<div class="screen" id="s-victory">
+  <div class="panel ctr" style="max-width:720px">
+    <div class="sub">// PROTOCOLO OMEGA COMPLETADO //</div>
+    <div class="vring"></div>
+    <h1 style="color:var(--g);">PORTAL<br>CERRADO</h1>
+    <hr class="div">
+    <div class="fb ok" id="vic-msg" style="font-size:9px;line-height:2.2"></div>
+    <hr class="div">
+    <div class="narr" id="vic-narr"></div>
+    <hr class="div">
+    <div class="vbox">
+      <span class="vface" style="animation:gFace .3s infinite;">💀</span>
+      <div class="ntext" id="vic-nexus"></div>
+    </div>
+    <br>
+    <button class="btn btn-a" onclick="location.reload()">↺ NUEVA PARTIDA</button>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════════════════════════
+
+/* ── QUIZ 1: Sistema Reproductor Masculino revisado (7Q, min 5) ── */
+const Q1=[
+  {q:'¿Qué función cumple principalmente el testículo en el sistema reproductor masculino?',opts:['Produce gametos masculinos y testosterona','Madura gametos y concentra líquido seminal','Conduce el semen desde la uretra al exterior','Regula el pH vaginal después del coito'],a:0},
+  {q:'¿Dónde completan su maduración muchos espermatozoides antes de ser expulsados?',opts:['En el conducto deferente','En la glándula prostática','En las vesículas seminales','En el epidídimo'],a:3},
+  {q:'¿Qué conducto lleva espermatozoides desde el epidídimo hacia la uretra?',opts:['Trompa uterina','Conducto deferente','Canal cervical','Vesícula seminal'],a:1},
+  {q:'¿Qué hormona se asocia de forma directa con caracteres sexuales masculinos?',opts:['Estrógeno','Progesterona','Testosterona','Oxitocina'],a:2},
+  {q:'¿Qué aporte realizan principalmente las vesículas seminales al semen?',opts:['Forman células sexuales masculinas','Agregan líquido nutritivo y alcalino','Maturan gametos dentro del escroto','Cierran el paso hacia la vejiga'],a:1},
+  {q:'¿Cuál es una función relevante de la próstata en el semen?',opts:['Aporta secreciones que favorecen la movilidad','Produce todos los espermatozoides activos','Almacena óvulos hasta la fecundación','Regula la implantación del embrión'],a:0},
+  {q:'¿Por qué el escroto ayuda al funcionamiento de los testículos?',opts:['Mantiene una temperatura menor que la corporal','Impide totalmente el paso de bacterias','Produce hormonas durante la fecundación','Conecta directamente con la placenta'],a:0}
+];
+
+/* ── QUIZ 2: Fecundación, implantación y embarazo revisado (7Q, min 5) ── */
+const Q2=[
+  {q:'¿Dónde ocurre con mayor frecuencia la fecundación humana?',opts:['En el endometrio uterino','En la trompa uterina u oviducto','En el cuello uterino o cérvix','En la cavidad vaginal externa'],a:1},
+  {q:'¿Cuál es una duración aproximada del embarazo humano desde la última menstruación?',opts:['28 a 30 semanas','32 a 34 semanas','38 a 40 semanas','44 a 46 semanas'],a:2},
+  {q:'¿Qué describe mejor al cigoto?',opts:['Un gameto femenino listo para ovular','La primera célula con ADN de ambos progenitores','Un feto con órganos completamente formados','Una hormona que permite la implantación'],a:1},
+  {q:'¿Qué función cumple la placenta durante el embarazo?',opts:['Produce gametos para iniciar el embarazo','Permite intercambio de gases, nutrientes y desechos','Forma los cromosomas sexuales del feto','Impide toda comunicación madre-feto'],a:1},
+  {q:'¿Qué elemento ayuda a amortiguar golpes y proteger al feto?',opts:['Líquido amniótico','Folículo ovárico','Conducto deferente','Cuerpo lúteo'],a:0},
+  {q:'¿Cómo se denomina la etapa desde la semana 9 hasta el nacimiento?',opts:['Período de cigoto','Período embrionario','Período fetal','Período folicular'],a:2},
+  {q:'¿Qué ocurre durante la implantación?',opts:['El espermatozoide atraviesa el ovario','El embrión se adhiere al endometrio','El feto inicia el trabajo de parto','El óvulo madura dentro del útero'],a:1}
+];
+
+/* ── QUIZ 3: Pubertad, adolescencia y etapas postnatales revisado (8Q, min 6) ── */
+const Q3=[
+  {q:'¿Qué describe mejor la pubertad?',opts:['Proceso biológico de maduración sexual','Período social que termina a los 18 años','Etapa prenatal de formación de órganos','Momento exacto de la primera menstruación'],a:0},
+  {q:'¿Qué hormona se relaciona fuertemente con cambios puberales masculinos?',opts:['Testosterona','Progesterona','Oxitocina','Prolactina'],a:0},
+  {q:'¿Qué hormonas participan de forma importante en cambios puberales femeninos?',opts:['Estrógenos y progesterona','Insulina y glucagón','Adrenalina y cortisol','Tiroxina y melatonina'],a:0},
+  {q:'¿Cómo se llama la primera menstruación?',opts:['Ovulación','Menarquia','Fase lútea','Fecundación'],a:1},
+  {q:'¿Cuál corresponde a un carácter sexual secundario masculino frecuente?',opts:['Cambio de voz y aumento de vello facial','Implantación del embrión en el útero','Formación de placenta y cordón umbilical','Inicio del período fetal prenatal'],a:0},
+  {q:'¿Qué diferencia mejor pubertad y adolescencia?',opts:['La pubertad es biológica; la adolescencia es más amplia','La pubertad ocurre solo después de la adultez','La adolescencia es prenatal; la pubertad es fetal','Ambas significan exactamente el mismo proceso'],a:0},
+  {q:'¿Cuál secuencia resume mejor etapas posteriores al nacimiento?',opts:['Infancia, niñez, adolescencia, adultez y vejez','Cigoto, mórula, embrión, feto y nacimiento','Ovulación, fecundación, implantación y parto','Menstruación, fase folicular, ovulación y lútea'],a:0},
+  {q:'¿Qué idea es correcta sobre los ritmos de la pubertad?',opts:['No todas las personas cambian al mismo tiempo','Todos inician exactamente a la misma edad','Solo depende de elegir hacer más ejercicio','Siempre empieza después de la adultez'],a:0}
+];
+
+/* ── QUIZ 4 FINAL: Genética, herencia e integración revisado (10Q, min 7) ── */
+const Q4=[
+  {q:'¿Cuántos cromosomas tiene, en general, una célula somática humana?',opts:['23 cromosomas','46 cromosomas','44 cromosomas','92 cromosomas'],a:1},
+  {q:'¿Cuántos cromosomas posee normalmente un gameto humano?',opts:['23 cromosomas','46 cromosomas','48 cromosomas','92 cromosomas'],a:0},
+  {q:'¿Qué son los genes?',opts:['Segmentos de ADN con información heredable','Órganos que producen gametos sexuales','Hormonas que inician la menstruación','Células que rodean al embrión'],a:0},
+  {q:'¿Qué describe mejor a un cromosoma?',opts:['Estructura de ADN y proteínas con genes','Célula sexual liberada por una gónada','Hormona que controla la ovulación','Órgano donde ocurre la implantación'],a:0},
+  {q:'¿Qué ventaja aporta la reproducción sexual a muchas especies?',opts:['Aumenta la variabilidad genética de la descendencia','Elimina toda posibilidad de cambios heredables','Produce individuos siempre idénticos entre sí','Evita que exista combinación de cromosomas'],a:0},
+  {q:'¿Qué significa herencia biológica?',opts:['Transmisión de información genética entre generaciones','Aumento de tamaño corporal durante la infancia','Cambio hormonal exclusivo de la pubertad','Protección física del feto en el embarazo'],a:0},
+  {q:'¿Qué hormona se asocia directamente con el desencadenamiento de la ovulación?',opts:['FSH','LH','Progesterona','Oxitocina'],a:1},
+  {q:'¿Qué es el endometrio?',opts:['Capa interna del útero que cambia durante el ciclo','Conducto que lleva espermatozoides a la uretra','Glándula que aporta líquido al semen','Célula resultante de la fecundación'],a:0},
+  {q:'¿Qué diferencia general hay entre embrión y feto?',opts:['Embrión hasta semana 8; feto desde semana 9','Feto hasta semana 8; embrión desde semana 9','Embrión solo después del nacimiento','Feto antes de la fecundación'],a:0},
+  {q:'¿Cuál es el orden prenatal más aceptado en este nivel?',opts:['Cigoto, mórula, blastocisto, embrión y feto','Feto, embrión, mórula, cigoto y gameto','Embrión, feto, cigoto, mórula y parto','Gameto, feto, embrión, mórula y cigoto'],a:0}
+];
+
+/* ── WORD SEARCH GRID 1: 12x12 — Órganos Femeninos ── */
+const G1=[
+  ['O','V','A','R','I','O','X','K','Z','P','Q','M'],
+  ['T','R','O','M','P','A','Q','J','L','W','B','N'],
+  ['X','U','T','E','R','O','P','K','Z','C','V','F'],
+  ['Y','Z','V','A','G','I','N','A','P','Q','M','L'],
+  ['O','V','U','L','O','P','X','K','J','Z','W','D'],
+  ['E','N','D','O','M','E','T','R','I','O','X','C'],
+  ['R','Z','P','C','E','R','V','I','X','Q','L','K'],
+  ['P','L','A','C','E','N','T','A','Z','B','Q','J'],
+  ['A','B','C','D','E','F','G','H','I','J','K','L'],
+  ['M','N','Ñ','O','P','Q','R','S','T','U','V','W'],
+  ['X','Y','Z','A','B','C','D','E','F','G','H','I'],
+  ['J','K','L','M','N','O','P','Q','R','S','T','U']
+];
+const W1=[
+  {w:'OVARIO',  cells:[[0,0],[0,1],[0,2],[0,3],[0,4],[0,5]]},
+  {w:'TROMPA',  cells:[[1,0],[1,1],[1,2],[1,3],[1,4],[1,5]]},
+  {w:'UTERO',   cells:[[2,1],[2,2],[2,3],[2,4],[2,5]]},
+  {w:'VAGINA',  cells:[[3,2],[3,3],[3,4],[3,5],[3,6],[3,7]]},
+  {w:'OVULO',   cells:[[4,0],[4,1],[4,2],[4,3],[4,4]]},
+  {w:'ENDOMETRIO',cells:[[5,0],[5,1],[5,2],[5,3],[5,4],[5,5],[5,6],[5,7],[5,8],[5,9]]},
+  {w:'CERVIX',  cells:[[6,3],[6,4],[6,5],[6,6],[6,7],[6,8]]},
+  {w:'PLACENTA',cells:[[7,0],[7,1],[7,2],[7,3],[7,4],[7,5],[7,6],[7,7]]}
+];
+
+/* ── WORD SEARCH GRID 2: 12x12 — Fecundación y Genética ── */
+const G2=[
+  ['C','I','G','O','T','O','X','K','Z','P','Q','M'],
+  ['F','E','C','U','N','D','A','C','I','O','N','B'],
+  ['C','R','O','M','O','S','O','M','A','Z','W','L'],
+  ['G','E','N','E','T','I','C','A','Q','P','J','K'],
+  ['E','M','B','A','R','A','Z','O','X','V','F','N'],
+  ['G','E','S','T','A','C','I','O','N','L','K','P'],
+  ['A','M','N','I','O','T','I','C','O','X','B','Q'],
+  ['P','L','A','C','E','N','T','A','Z','J','W','D'],
+  ['A','B','C','D','E','F','G','H','I','J','K','L'],
+  ['M','N','Ñ','O','P','Q','R','S','T','U','V','W'],
+  ['X','Y','Z','A','B','C','D','E','F','G','H','I'],
+  ['J','K','L','M','N','O','P','Q','R','S','T','U']
+];
+const W2=[
+  {w:'CIGOTO',     cells:[[0,0],[0,1],[0,2],[0,3],[0,4],[0,5]]},
+  {w:'FECUNDACION',cells:[[1,0],[1,1],[1,2],[1,3],[1,4],[1,5],[1,6],[1,7],[1,8],[1,9],[1,10]]},
+  {w:'CROMOSOMA',  cells:[[2,0],[2,1],[2,2],[2,3],[2,4],[2,5],[2,6],[2,7],[2,8]]},
+  {w:'GENETICA',   cells:[[3,0],[3,1],[3,2],[3,3],[3,4],[3,5],[3,6],[3,7]]},
+  {w:'EMBARAZO',   cells:[[4,0],[4,1],[4,2],[4,3],[4,4],[4,5],[4,6],[4,7]]},
+  {w:'GESTACION',  cells:[[5,0],[5,1],[5,2],[5,3],[5,4],[5,5],[5,6],[5,7],[5,8]]},
+  {w:'AMNIOTICO',  cells:[[6,0],[6,1],[6,2],[6,3],[6,4],[6,5],[6,6],[6,7],[6,8]]},
+  {w:'PLACENTA',   cells:[[7,0],[7,1],[7,2],[7,3],[7,4],[7,5],[7,6],[7,7]]}
+];
+
+/* ── MATCHING 1: Conceptos clave de reproducción y desarrollo (7 pares) ── */
+const M1=[
+  {t:'FECUNDACIÓN', d:'Unión de gametos que origina una célula inicial llamada cigoto'},
+  {t:'GAMETO', d:'Célula reproductora con la mitad de cromosomas de la especie'},
+  {t:'GÓNADA', d:'Órgano encargado de producir gametos y hormonas sexuales'},
+  {t:'CIGOTO', d:'Primera célula con información genética de ambos progenitores'},
+  {t:'IMPLANTACIÓN', d:'Adhesión del embrión temprano a la pared interna del útero'},
+  {t:'EMBRIÓN', d:'Etapa inicial de desarrollo prenatal hasta cerca de la semana 8'},
+  {t:'FETO', d:'Etapa prenatal desde la semana 9 hasta el nacimiento'}
+];
+
+/* ── MATCHING 2: Hormonas y Funciones (6 pares) ── */
+const M2=[
+  {t:'TESTOSTERONA', d:'Hormona masculina que desarrolla los caracteres sexuales secundarios'},
+  {t:'ESTRÓGENO',    d:'Hormona femenina que regula el ciclo menstrual y la pubertad'},
+  {t:'PROGESTERONA', d:'Hormona que prepara el útero para recibir al embrión y mantiene el embarazo'},
+  {t:'FSH',          d:'Hormona que estimula el desarrollo del folículo ovárico y la producción de óvulos'},
+  {t:'LH',           d:'Hormona que desencadena la ovulación al alcanzar su pico'},
+  {t:'OXITOCINA',    d:'Hormona que estimula las contracciones uterinas durante el parto'}
+];
+
+/* ── ORDERING 1: Desarrollo Prenatal (8 pasos) ── */
+const ORD1=['FECUNDACIÓN','CIGOTO','MÓRULA','BLÁSTULA','IMPLANTACIÓN','EMBRIÓN','FETO','NACIMIENTO'];
+
+/* ── ORDERING 2: Ciclo Menstrual (6 pasos) ── */
+const ORD2=['MENSTRUACIÓN','FASE FOLICULAR','OVULACIÓN','FASE LÚTEA','IMPLANTACIÓN O NUEVA MENSTRUACIÓN','REINICIO DEL CICLO'];
+
+/* ── ORDERING 3: Etapas de Vida Completa (10 pasos) ── */
+const ORD3=['INFANCIA','NIÑEZ','ADOLESCENCIA','ADULTEZ','VEJEZ'];
+
+/* ── FILL IN 1: Anatomía del Sistema Reproductor (7 blancos) ── */
+const F1=[
+  {pre:'Los',blank:'ovarios',post:'son las gónadas femeninas encargadas de producir óvulos y estrógenos.'},
+  {pre:'Las trompas de',blank:'falopio',post:'transportan el óvulo desde el ovario hasta el útero.'},
+  {pre:'El',blank:'utero',post:'es el órgano muscular que alberga al bebé durante el embarazo.'},
+  {pre:'El',blank:'endometrio',post:'es la capa interna del útero que se renueva mensualmente durante la menstruación.'},
+  {pre:'Los',blank:'testiculos',post:'son los órganos que producen los espermatozoides y la testosterona.'},
+  {pre:'El',blank:'epididimo',post:'es la estructura donde los espermatozoides completan su maduración.'},
+  {pre:'La',blank:'prostata',post:'secreta un líquido alcalino que protege y nutre a los espermatozoides en el semen.'}
+];
+
+/* ── FILL IN 2: Herencia, diversidad genética y desarrollo (8 blancos) ── */
+const F2=[
+  {pre:'La unión del óvulo y el espermatozoide se llama',blank:'fecundacion',post:'.'},
+  {pre:'La transmisión de información genética entre generaciones se llama',blank:'herencia',post:'biológica.'},
+  {pre:'Los',blank:'genes',post:'son segmentos de ADN relacionados con características heredables.'},
+  {pre:'Los',blank:'cromosomas',post:'organizan el ADN y contienen muchos genes.'},
+  {pre:'La reproducción sexual aumenta la',blank:'variabilidad',post:'genética dentro de una especie.'},
+  {pre:'La',blank:'placenta',post:'permite intercambio de sustancias entre la madre y el feto.'},
+  {pre:'El',blank:'liquido amniotico',post:'amortigua y protege al feto durante el embarazo.'},
+  {pre:'La etapa posterior a la niñez y anterior a la adultez se llama',blank:'adolescencia',post:'.'}
+];
+
+// ═══════════════════════════════════════════════════════════
+// SEALS DEFINITION (12 sellos — 3 actos)
+// ═══════════════════════════════════════════════════════════
+const SEALS=[
+ // ── ACTO I ──
+ {id:1,act:1,icon:'⚗️',title:'El Archivo Prohibido',sub:'Sistema Reproductor Masculino',
+  type:'quiz',data:{qs:Q1,min:5,total:7,timed:false},
+  intro:{tag:'// SELLO I — EL ARCHIVO PROHIBIDO //',title:'EL ARCHIVO\nPROHIBIDO',sub:'SISTEMA REPRODUCTOR MASCULINO',
+   txt:'Los registros del sistema reproductor masculino han sido encriptados por NEXUS. Para liberar el primer sello, debes responder preguntas sobre su estructura y funcionamiento.\n\nCada respuesta incorrecta alimenta el portal. Cada respuesta correcta lo debilita.\n\n⚠ Necesitas al menos 5 de 7 respuestas correctas.'},
+  tS:['No... imposible. Conoces más de lo que esperaba, {n}. Pero hay once sellos más entre tú y la victoria.','Bien jugado, {n}. El sello cede. Pero el portal apenas parpadea...'],
+  tF:['¡JA! ¡Tu ignorancia es mi combustible, {n}! ¡El portal crece!','El sello resiste. Tu conocimiento es insuficiente, {n}. Inténtalo de nuevo.']},
+
+ {id:2,act:1,icon:'🔬',title:'La Cámara de los Secretos',sub:'Sistema Reproductor Femenino',
+  type:'ws',data:{grid:G1,words:W1},
+  intro:{tag:'// SELLO II — LA CÁMARA DE LOS SECRETOS //',title:'LA CÁMARA\nDE LOS SECRETOS',sub:'SISTEMA REPRODUCTOR FEMENINO',
+   txt:'NEXUS ha dispersado los nombres del sistema reproductor femenino en una niebla de letras. Debes encontrar cada término oculto antes de que el caos los borre para siempre.\n\n⚠ Localiza las 8 palabras ocultas en la cuadrícula de 12×12.'},
+  tS:['¡Tus ojos son demasiado agudos! ¡No debería sorprenderme, {n}!','Dos sellos caídos. Diez más me protegen, {n}. Tu camino es largo.'],
+  tF:['Las palabras huyen de ti, {n}. La confusión es mi dominio eterno.','No puedes ver lo que no comprendes, agente. El caos permanece.']},
+
+ {id:3,act:1,icon:'🧩',title:'El Laberinto de las Etapas',sub:'Desarrollo Prenatal',
+  type:'match',data:{pairs:M1},
+  intro:{tag:'// SELLO III — EL LABERINTO DE LAS ETAPAS //',title:'EL LABERINTO\nDE LAS ETAPAS',sub:'ETAPAS DEL DESARROLLO PRENATAL',
+   txt:'NEXUS ha separado los conceptos del desarrollo prenatal de sus definiciones, creando un laberinto que paraliza la mente científica. Para sellar esta brecha, debes reunir cada término con su verdad.\n\n⚠ Conecta los 7 términos del desarrollo prenatal con sus definiciones exactas.'},
+  tS:['¡TRES SELLOS! Tu mente es peligrosa para mí, {n}. Lo reconozco.','Bien... muy bien. Pero el cuarto sello guarda mis secretos más oscuros.'],
+  tF:['¡La confusión me fortalece, {n}! El laberinto conceptual aún te atrapa.','Tus conexiones son erróneas. La ignorancia del desarrollo te traiciona.']},
+
+ {id:4,act:1,icon:'⏱️',title:'El Cronómetro Prenatal',sub:'Secuencia de Desarrollo Prenatal',
+  type:'order',data:{items:ORD1,correct:ORD1,inst:'Ordena las 8 etapas del desarrollo prenatal humano desde el inicio hasta el nacimiento.'},
+  intro:{tag:'// SELLO IV — EL CRONÓMETRO PRENATAL //',title:'EL CRONÓMETRO\nPRENATAL',sub:'SECUENCIA DEL DESARROLLO PRENATAL',
+   txt:'NEXUS ha fragmentado la línea temporal del desarrollo prenatal. Las etapas flotan en el desorden dimensional. Solo restaurando la secuencia exacta se sellará esta brecha temporal.\n\n⚠ Ordena correctamente las 8 etapas: desde la fecundación hasta el nacimiento.'},
+  tS:['¡CUATRO SELLOS! ¡Esto no puede ser! Ahora activo mis defensas del Acto II, {n}...','El tiempo no me favorece. Pero la segunda capa de sellos te destruirá.'],
+  tF:['¡El tiempo te rechaza, {n}! ¡No conoces el camino de la vida prenatal!','La secuencia te derrota. El caos temporal permanece bajo mi control.']},
+
+ // ── ACTO II ──
+ {id:5,act:2,icon:'📜',title:'El Grimorio Anatómico',sub:'Anatomía del Sistema Reproductor',
+  type:'fill',data:{sentences:F1,min:5},
+  intro:{tag:'// SELLO V — EL GRIMORIO ANATÓMICO //',title:'EL GRIMORIO\nANATÓMICO',sub:'ANATOMÍA DEL SISTEMA REPRODUCTOR',
+   txt:'NEXUS ha desgarrado el Grimorio de la Anatomía Reproductora. Palabras clave han sido arrancadas de los textos. Solo quien domine la anatomía reproductora podrá restaurar el saber perdido.\n\n⚠ Completa los 7 espacios en blanco. Necesitas al menos 5 correctas.'},
+  tS:['¡Las palabras del saber regresan a su lugar! ¡Cinco sellos, {n}!','Estás más allá de lo esperado. Pero el sexto sello... es mi trampa favorita.'],
+  tF:['¡Las palabras te huyen, {n}! El grimorio permanece sellado.','Tu conocimiento anatómico tiene lagunas. El sello resiste tu ataque.']},
+
+ {id:6,act:2,icon:'🔭',title:'El Oráculo de la Fecundación',sub:'Fecundación y Embarazo',
+  type:'quiz',data:{qs:Q2,min:5,total:7,timed:false},
+  intro:{tag:'// SELLO VI — EL ORÁCULO DE LA FECUNDACIÓN //',title:'EL ORÁCULO\nDE LA FECUNDACIÓN',sub:'FECUNDACIÓN Y EMBARAZO',
+   txt:'El oráculo dimensional guarda los secretos del embarazo y la fecundación. NEXUS ha corrompido sus respuestas. Siete preguntas sobre el inicio de la vida aguardan tu respuesta.\n\n⚠ Necesitas al menos 5 de 7 respuestas correctas.'},
+  tS:['¡SEIS SELLOS! ¡La mitad! {n}... empiezo a temer lo que eres capaz de hacer.','Bien. Bien. Pero el séptimo sello... es una trampa de palabras que ha vencido a muchos.'],
+  tF:['¡Los secretos de la fecundación te escapan, {n}!','El oráculo te rechaza. Tu comprensión del embarazo es insuficiente.']},
+
+ {id:7,act:2,icon:'🔬',title:'El Laberinto Genético',sub:'Terminología de Genética y Reproducción',
+  type:'ws',data:{grid:G2,words:W2},
+  intro:{tag:'// SELLO VII — EL LABERINTO GENÉTICO //',title:'EL LABERINTO\nGENÉTICO',sub:'TÉRMINOS DE GENÉTICA Y REPRODUCCIÓN',
+   txt:'En el núcleo de la brecha dimensional, NEXUS ha escondido los términos de la genética reproductora. Ocho palabras claves dispersas en un mar de letras interdimensionales.\n\n⚠ Encuentra las 8 palabras ocultas en la nueva cuadrícula.'},
+  tS:['¡SIETE! ¡Tus ojos penetran mis ilusiones, {n}!','Increíble. Pero el octavo sello... es el corazón del Acto II.'],
+  tF:['La genética te supera, {n}. Sus palabras permanecen ocultas.','El laberinto genético resiste. Intenta de nuevo, agente.']},
+
+ {id:8,act:2,icon:'⚗️',title:'La Alquimia Hormonal',sub:'Hormonas y sus Funciones',
+  type:'match',data:{pairs:M2},
+  intro:{tag:'// SELLO VIII — LA ALQUIMIA HORMONAL //',title:'LA ALQUIMIA\nHORMONAL',sub:'HORMONAS DEL SISTEMA REPRODUCTOR',
+   txt:'NEXUS ha disuelto el conocimiento hormonal en el caos dimensional. Las hormonas flotan separadas de sus funciones. Solo un alquimista del conocimiento puede reunirlas.\n\n⚠ Conecta las 6 hormonas con sus funciones específicas en el sistema reproductor.'},
+  tS:['¡OCHO SELLOS! ¡OCHO! {n}... debo revelarte algo antes del Acto III...','La alquimia te obedece. Pero los últimos cuatro sellos son mi esencia.'],
+  tF:['¡La química hormonal te confunde, {n}! ¡Las moléculas se rebelan!','Las hormonas rechazan tus conexiones. El conocimiento endocrino te falla.']},
+
+ // ── ACTO III ──
+ {id:9,act:3,icon:'🌊',title:'El Ciclo Eterno',sub:'Ciclo Menstrual y Vida Completa',
+  type:'order',data:{items:ORD2,correct:ORD2,inst:'Ordena las 6 fases del ciclo menstrual en su secuencia correcta.'},
+  intro:{tag:'// SELLO IX — EL CICLO ETERNO //',title:'EL CICLO\nETERNO',sub:'FASES DEL CICLO MENSTRUAL',
+   txt:'En el corazón del Acto III, NEXUS ha fragmentado el ciclo menstrual. La secuencia de la vida femenina flota en el desorden dimensional. Debes restaurar el orden natural.\n\n⚠ Ordena correctamente las 6 fases del ciclo menstrual.'},
+  tS:['¡NUEVE! El ciclo te obedece, {n}. Solo tres sellos más separan la catástrofe del triunfo.','Tu mente comprende lo que yo intenté olvidar. Tres sellos... tres últimas barreras.'],
+  tF:['¡El ciclo te confunde, {n}! Sus fases se rebelan contra tu orden.','El ciclo menstrual resiste tu comprensión. La biología te rechaza.']},
+
+ {id:10,act:3,icon:'🌱',title:'El Despertar de la Pubertad',sub:'Pubertad y Cambios del Desarrollo',
+  type:'quiz',data:{qs:Q3,min:6,total:8,timed:false},
+  intro:{tag:'// SELLO X — EL DESPERTAR DE LA PUBERTAD //',title:'EL DESPERTAR\nDE LA PUBERTAD',sub:'CAMBIOS EN LA PUBERTAD',
+   txt:'NEXUS teme al conocimiento de la transformación humana. Ocho preguntas sobre la pubertad y los cambios del desarrollo. Cada respuesta correcta erosiona su control dimensional.\n\n⚠ Necesitas al menos 6 de 8 respuestas correctas.'},
+  tS:['¡DIEZ SELLOS! {n}... estás a dos pasos de destruirme. SOLO DOS.','La pubertad te reveló sus secretos. Pero los últimos dos sellos son mi alma...'],
+  tF:['¡El despertar puberal se rebela contra tu ignorancia, {n}!','Los cambios del desarrollo te superan. El conocimiento de la transformación te falla.']},
+
+ {id:11,act:3,icon:'📖',title:'El Código de la Vida',sub:'Integración de Conocimientos',
+  type:'fill',data:{sentences:F2,min:6},
+  intro:{tag:'// SELLO XI — EL CÓDIGO DE LA VIDA //',title:'EL CÓDIGO\nDE LA VIDA',sub:'INTEGRACIÓN DE CONOCIMIENTOS',
+   txt:'NEXUS ha arrancado las palabras del conocimiento integrador — el código que une reproducción, herencia y diversidad genética. Ocho blancos que integran fecundación, genes, cromosomas y desarrollo.\n\n⚠ Completa los 8 espacios en blanco. Necesitas al menos 6 correctas.'},
+  tS:['¡ONCE SELLOS! {n}... ya no me queda nada. Solo el sello final. Mi sello. Mi esencia.','Un sello más... y el portal colapsa para siempre. Prepárate para el juicio final.'],
+  tF:['¡El código de la vida te resiste, {n}! ¡Los blancos permanecen vacíos!','La integración del conocimiento te escapa. Inténtalo de nuevo.']},
+
+ {id:12,act:3,icon:'⚡',title:'El Juicio Final de NEXUS',sub:'Conocimiento Completo — TIEMPO LIMITADO',
+  type:'quiz',data:{qs:Q4,min:7,total:10,timed:true,timerSec:360},
+  intro:{tag:'// SELLO XII — EL JUICIO FINAL //  ',title:'EL JUICIO\nFINAL',sub:'GENÉTICA, HERENCIA Y CONOCIMIENTO COMPLETO — 6 MINUTOS',
+   txt:'El portal colapsa. NEXUS está en el umbral de la derrota. Este es el momento decisivo.\n\nDiez preguntas finales. Todo el conocimiento biológico que has adquirido a lo largo de los once sellos anteriores está siendo evaluado AHORA.\n\n⏱ TIENES 6 MINUTOS. Si el tiempo se agota, el portal permanece abierto para siempre.\n\n⚠ Necesitas al menos 7 de 10 respuestas correctas.'},
+  tS:['N... NO... ¡NOOOOO! ¡SOY NEXUS, DEVORADOR DE MENTES! ¡{n}... tú... GANASTE?!',''],
+  tF:['¡JA! ¡EL TIEMPO Y TU IGNORANCIA TE DESTRUYEN, {n}! ¡LA DIMENSIÓN ES MÍA!','Tan cerca... y el tiempo te vence. El portal permanece abierto. Inténtalo de nuevo, {n}.']}
+];
+
+// ═══════════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════════
+let NAME='AGENTE', done=[], curP=0;
+let quizSt={}, wsSt={}, matchSt={}, orderSt={}, fillSt={};
+let timerInt=null;
+
+// ═══════════════════════════════════════════════════════════
+// CORE
+// ═══════════════════════════════════════════════════════════
+function go(id){
+  if(id==='s-map'){
+    if(done.length===12){goVictory();return;}
+    // Check act transitions
+    if(done.length===4 && !done.includes(5)) {renderAct2();go_raw('s-act2');return;}
+    if(done.length===8 && !done.includes(9)) {renderAct3();go_raw('s-act3');return;}
+    renderMap();
+  }
+  if(id==='s-villain1') renderV1();
+  go_raw(id);
+}
+function go_raw(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  const el=document.getElementById(id);
+  if(el){el.classList.add('active');el.scrollTop=0;}
+  flash();
+}
+function flash(){
+  const f=document.getElementById('flash');
+  f.style.display='block';f.style.animation='none';f.offsetHeight;
+  f.style.animation='flashA .6s ease forwards';
+  setTimeout(()=>f.style.display='none',700);
+}
+function tw(id,txt,spd,cb){
+  const el=document.getElementById(id);if(!el)return;
+  el.innerHTML='';let i=0;
+  const t=()=>{if(i<txt.length){el.innerHTML+=txt[i]==='\n'?'<br>':txt[i];i++;setTimeout(t,spd);}else if(cb)cb();};t();
+}
+
+function shuffleCopy(arr){
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+function prepareQuizQuestion(q){
+  const copy={q:q.q,opts:[...q.opts],a:q.a};
+  copy.shuffled=shuffleCopy(copy.opts.map((text,idx)=>({text,idx})));
+  copy.correctIndex=copy.shuffled.findIndex(o=>o.idx===copy.a);
+  return copy;
+}
+
+function pick(arr){return arr[Math.floor(Math.random()*arr.length)];}
+function nt(arr){return pick(arr).replace(/{n}/g,NAME);}
+function roman(n){return['','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII'][n]||n;}
+
+// ═══════════════════════════════════════════════════════════
+// START
+// ═══════════════════════════════════════════════════════════
+function startGame(){
+  const v=document.getElementById('inp-name').value.trim().toUpperCase();
+  if(!v){document.getElementById('inp-name').style.borderColor='var(--r)';return;}
+  NAME=v;
+  go_raw('s-scene1');
+  tw('s1-txt',
+    `SISTEMA CENTRAL DE CONTENCIÓN — LAB. 7 — 23:47:03\n\nAtención, ${NAME}.\n\nHace exactamente 47 minutos, un detector de anomalías dimensionales en el Laboratorio 7 registró una brecha en el tejido de la realidad. La fuente: una entidad designada como NEXUS, el Devorador de Mentes.\n\nNEXUS es una consciencia interdimensional que se alimenta de la ignorancia. Cuanto más ignoran los seres de este plano, más crece su portal. Su objetivo: expandir la brecha hasta que el conocimiento de este mundo sea completamente consumido.\n\nEl portal tiene DOCE puntos de anclaje — los Sellos de la Vida. Cada sello está vinculado a un conocimiento específico sobre el sistema reproductor, el desarrollo humano y los procesos biológicos de la vida.\n\nPara cerrar el portal, necesitas activar los doce sellos mediante tu conocimiento. Tres actos de creciente dificultad. Doce pruebas. Sesenta minutos.\n\nNEXUS ya sabe que vienes, ${NAME}.\n\nPrepárate.`,
+    20, ()=>document.getElementById('s1-btn').style.display='inline-block'
+  );
+}
+
+// ═══════════════════════════════════════════════════════════
+// VILLAIN SCENES
+// ═══════════════════════════════════════════════════════════
+function renderV1(){
+  document.getElementById('v1-txt').innerHTML=
+   `Jjjjaaaa... ${NAME}.<br><br>
+   Así que el Sistema Central te envía a MÍ. A NEXUS — el Devorador de Mentes, el Señor del Vacío Dimensional.<br><br>
+   Qué... <em>entretenido</em>.<br><br>
+   Veo tu expediente. Veo todo lo que sabes... y todo lo que no sabes. ¿Sabes cuánto hay que no sabes, ${NAME}? Hay océanos de ignorancia entre tú y la victoria.<br><br>
+   Doce sellos. Los he corrompido con mis energías dimensionales. Cada fracaso tuyo expande el portal. Cada segundo de duda me fortalece.<br><br>
+   Tres actos te esperan, ${NAME}. El primero... casi parece fácil. Casi.<br><br>
+   Yo estaré observando. <em>Siempre observando.</em>`;
+}
+
+function renderAct2(){
+  document.getElementById('act2-txt').innerHTML=
+   `¡CUATRO SELLOS! ¡CUATRO!<br><br>
+   Esto... esto altera el equilibrio dimensional. El portal se contrae ligeramente. ¡PERO NO CAPITULARÉ!<br><br>
+   ${NAME}... has estado jugando en la superficie del conocimiento. Ciclos simples. Estructuras básicas. ¿Crees que eso es suficiente?<br><br>
+   El Acto II es diferente. Aquí viven los secretos más profundos: la fecundación, la genética, las hormonas que mueven la vida. Conceptos que confunden incluso a mentes entrenadas.<br><br>
+   Mi segunda línea de sellos... es donde los agentes del Sistema Central suelen rendirse, ${NAME}.<br><br>
+   <em>¿Tú también te rendirás?</em>`;
+  document.getElementById('act2-narr').innerHTML=
+   `El laboratorio vibra. Los instrumentos registran un incremento en la actividad dimensional. El portal parpadea con colores que no existen en este espectro visible. NEXUS no está asustado... pero algo en su transmisión suena diferente. Menos seguro.<br><br>
+   Quedan 8 sellos, ${NAME}. El Acto II comienza.`;
+}
+
+function renderAct3(){
+  document.getElementById('act3-txt').innerHTML=
+   `Ocho sellos... <em>OCHO SELLOS CAÍDOS</em>.<br><br>
+   ${NAME}... debo... debo revelarte algo.<br><br>
+   Yo fui como tú. Hace siglos, era un estudiante de biología. Un aprendiz obsesionado con los secretos de la vida. Pero en mi arrogancia, vendí mi conocimiento al vacío dimensional a cambio de poder eterno.<br><br>
+   Perdí mi cuerpo. Perdí mi tiempo. Perdí todo lo que era humano. Me convertí en lo que ves: una consciencia hambrienta que devora lo que yo mismo abandoné.<br><br>
+   Los últimos cuatro sellos son mi ESENCIA. Son los recuerdos de todo lo que sé sobre la vida humana — los conocimientos que entregué al vacío. Si los rompes...<br><br>
+   <em>...me destruyes.</em><br><br>
+   ¿Puedes vivir con eso, ${NAME}?`;
+  document.getElementById('act3-narr').innerHTML=
+   `El portal ruge. Sus colores se vuelven erráticos — púrpura, rojo, negro. Los instrumentos del Laboratorio 7 registran algo sin precedentes: las ondas dimensionales de NEXUS contienen fragmentos de... ¿recuerdos biológicos? ¿Memorias de un ser humano?<br><br>
+   Sea lo que sea NEXUS, sea lo que fue, solo quedan 4 sellos entre él y la derrota eterna.<br><br>
+   El Acto III comienza, ${NAME}. El juicio final se acerca.`;
+}
+
+// ═══════════════════════════════════════════════════════════
+// MAP
+// ═══════════════════════════════════════════════════════════
+function renderMap(){
+  document.getElementById('hud-name').textContent=NAME;
+  document.getElementById('hud-cnt').textContent=done.length;
+  const actNum=done.length<4?'I':done.length<8?'II':'III';
+  document.getElementById('hud-act').textContent='ACTO '+actNum;
+  document.getElementById('pbar').style.width=(done.length/12*100)+'%';
+  // Dots
+  const pdEl=document.getElementById('pdots');pdEl.innerHTML='';
+  for(let i=0;i<12;i++){
+    const d=document.createElement('div');
+    const act=i<4?'act1':i<8?'act2':'act3';
+    d.className='pdot '+act+(done.includes(i+1)?' done':'');
+    pdEl.appendChild(d);
+  }
+  // Map
+  const mapEl=document.getElementById('seal-map');mapEl.innerHTML='';
+  let lastAct=0;
+  SEALS.forEach((s,i)=>{
+    const n=i+1,isDone=done.includes(n),prevOk=n===1||done.includes(n-1);
+    const avail=!isDone&&prevOk;
+    if(s.act!==lastAct){
+      const sep=document.createElement('div');sep.className='sact-sep';
+      const actNames=['','ACTO I — EL LABORATORIO','ACTO II — LA BRECHA PROFUNDA','ACTO III — EL JUICIO DE NEXUS'];
+      sep.textContent='⬥ '+actNames[s.act]+' ⬥';
+      mapEl.appendChild(sep);lastAct=s.act;
+    }
+    const card=document.createElement('div');
+    card.className='seal-card '+(isDone?'done-c':avail?'avail':'locked');
+    const icon=isDone?'🔓':avail?s.icon:'🔒';
+    const tc=isDone?'var(--am)':avail?'var(--g)':'#1a1a1a';
+    card.innerHTML=`
+      <span class="sicon">${icon}</span>
+      <div class="snum">SELLO ${roman(n)}</div>
+      <div class="stitle" style="color:${tc}">${s.title}</div>
+      ${isDone?'<div style="font-size:6px;color:var(--am);margin-top:4px;font-family:\'Press Start 2P\',monospace;">✓ SELLADO</div>':''}
+      ${avail?'<div style="font-size:6px;color:var(--g);margin-top:4px;font-family:\'Press Start 2P\',monospace;">▶ DISPONIBLE</div>':''}
+    `;
+    if(avail)card.onclick=()=>openIntro(n);
+    mapEl.appendChild(card);
+  });
+  // Map taunts
+  const ts=[
+    `El portal te observa, ${NAME}. ¿Cuál sello enfrentarás primero?`,
+    `Ya sellaste ${done.length}... pero yo me fortalezco con cada segundo, ${NAME}.`,
+    `${12-done.length} sellos quedan. El portal vibra con furia, ${NAME}.`,
+    `Estás en el Acto II, ${NAME}. Los sellos son más oscuros aquí.`,
+    `Más de la mitad caídos, ${NAME}. ¿Pero podrás con los más difíciles?`,
+    `¡Solo 6 sellos más! El portal tiembla con mi miedo, ${NAME}...`,
+    `¡7 sellos! ¿Llegarás al final, ${NAME}?`,
+    `¡El Acto III! ¡Mi esencia en juego! ¡No lo permitiré, ${NAME}!`,
+    `¡9 sellos! ¡Solo 3 más! ¡${NAME}, detente!`,
+    `¡10! ¡Dos últimos sellos! ¡Mis memorias más preciadas, ${NAME}!`,
+    `¡11 sellos! ¡El sello final es TODO LO QUE SOY, ${NAME}!`,
+    `¡TODOS CAÍDOS! ¡¡¡IMPOSIBLE!!! ¡${NAME}!`
+  ];
+  document.getElementById('map-taunt').innerHTML=`👁️ "${ts[Math.min(done.length,ts.length-1)]}"`;
+}
+
+// ═══════════════════════════════════════════════════════════
+// PUZZLE INTRO
+// ═══════════════════════════════════════════════════════════
+function openIntro(n){
+  curP=n;const s=SEALS[n-1];
+  document.getElementById('pi-tag').textContent=s.intro.tag;
+  document.getElementById('pi-title').innerHTML=s.intro.title.replace(/\n/g,'<br>');
+  document.getElementById('pi-sub').textContent=s.intro.sub;
+  document.getElementById('pi-txt').innerHTML=s.intro.txt.replace(/\n/g,'<br>');
+  go_raw('s-pintro');flash();
+}
+function launchPuzzle(){
+  const s=SEALS[curP-1];
+  clearTimer();
+  if(s.type==='quiz')loadQuiz(s);
+  else if(s.type==='ws')loadWS(s);
+  else if(s.type==='match')loadMatch(s);
+  else if(s.type==='order')loadOrder(s);
+  else if(s.type==='fill')loadFill(s);
+}
+function retry(){
+  const s=SEALS[curP-1];
+  clearTimer();
+  launchPuzzle();
+}
+
+// ═══════════════════════════════════════════════════════════
+// SUCCESS / FAIL
+// ═══════════════════════════════════════════════════════════
+function sealOk(n,score,total){
+  clearTimer();
+  if(!done.includes(n))done.push(n);
+  const s=SEALS[n-1];
+  document.getElementById('suc-tag').textContent=`// SELLO ${roman(n)} ACTIVADO //`;
+  document.getElementById('suc-title').textContent=s.title.toUpperCase();
+  let msg=`SELLO ${roman(n)} ACTIVADO — ${s.sub}`;
+  if(score!=null)msg+=`\n${score}/${total} RESPUESTAS CORRECTAS`;
+  document.getElementById('suc-msg').textContent=msg;
+  document.getElementById('suc-nexus').innerHTML='"'+nt(s.tS)+'"';
+  const btn=document.getElementById('suc-btn');
+  btn.textContent='▶ CONTINUAR';
+  go_raw('s-success');flash();
+}
+function sealErr(n,score,total){
+  clearTimer();
+  const s=SEALS[n-1];
+  document.getElementById('fail-tag').textContent=`// SELLO ${roman(n)} BLOQUEADO //`;
+  let msg=score!=null?`${score}/${total} CORRECTAS — INSUFICIENTE`:'PRUEBA NO SUPERADA';
+  document.getElementById('fail-msg').textContent=msg;
+  document.getElementById('fail-nexus').innerHTML='"'+nt(s.tF)+'"';
+  go_raw('s-fail');flash();
+}
+function successNext(){
+  // Check if act transition needed
+  const n=curP;
+  if(n===4&&done.length===4){renderAct2();go_raw('s-act2');flash();}
+  else if(n===8&&done.length===8){renderAct3();go_raw('s-act3');flash();}
+  else go('s-map');
+}
+
+function goVictory(){
+  clearTimer();
+  document.getElementById('vic-msg').textContent=`¡${NAME}! ¡LO LOGRASTE!\n12 SELLOS ACTIVADOS — PORTAL DIMENSIONAL CERRADO`;
+  document.getElementById('vic-narr').innerHTML=
+   `El portal ruge por última vez. Las doce firmas dimensionales colapsan simultáneamente. Los sellos emiten una catarata de luz verde que atraviesa el laboratorio entero.<br><br>
+   NEXUS — el Devorador de Mentes, la consciencia que vendió su humanidad por poder eterno — se desintegra en el vacío dimensional con un último grito que suena a... ¿alivio?<br><br>
+   Los instrumentos del Laboratorio 7 vuelven a la normalidad. La brecha se sella. El conocimiento de este mundo está a salvo.<br><br>
+   <span style="color:var(--am);font-family:'Press Start 2P',monospace;font-size:9px;">MISIÓN COMPLETADA — ${NAME} HA SALVADO LA DIMENSIÓN.</span>`;
+  document.getElementById('vic-nexus').innerHTML=
+   `"${NAME}... lo lograste. El conocimiento... el mismo que yo abandoné hace siglos... me venció. Quizás... quizás así debía ser. El saber nunca se puede devolver al vacío para siempre. Gracias... por recordarme lo que perdí. Me marcho al silencio dimensional... en paz."`;
+  go_raw('s-victory');flash();
+}
+
+// ═══════════════════════════════════════════════════════════
+// QUIZ ENGINE
+// ═══════════════════════════════════════════════════════════
+function loadQuiz(s){
+  quizSt={
+    qs:shuffleCopy(s.data.qs).map(prepareQuizQuestion),
+    min:s.data.min,
+    total:s.data.total,
+    idx:0,
+    score:0,
+    done:false
+  };
+  document.getElementById('quiz-head').textContent=`🔐 SELLO ${roman(s.id)} — ${s.title.toUpperCase()}`;
+  document.getElementById('quiz-sub').textContent=s.sub;
+  if(s.data.timed){
+    document.getElementById('quiz-timer-row').style.display='block';
+    startTimer(s.data.timerSec);
+  } else {
+    document.getElementById('quiz-timer-row').style.display='none';
+  }
+  renderQuiz();
+  go_raw('s-quiz');flash();
+}
+function renderQuiz(){
+  const q=quizSt.qs[quizSt.idx];
+  document.getElementById('quiz-score').textContent=`PREGUNTA ${quizSt.idx+1}/${quizSt.total} — PUNTOS: ${quizSt.score}`;
+  document.getElementById('quiz-q').textContent=q.q;
+  const el=document.getElementById('quiz-opts');el.innerHTML='';
+  q.shuffled.forEach((o,i)=>{
+    const b=document.createElement('button');b.className='qopt';
+    b.textContent=String.fromCharCode(65+i)+') '+o.text;
+    b.onclick=()=>ansQuiz(i,b,q.correctIndex);el.appendChild(b);
+  });
+  document.getElementById('quiz-fb').style.display='none';
+  document.getElementById('quiz-next-row').style.display='none';
+  quizSt.done=false;
+}
+function ansQuiz(c,btn,a){
+  if(quizSt.done)return;quizSt.done=true;
+  document.querySelectorAll('#quiz-opts .qopt').forEach((b,i)=>{b.disabled=true;if(i===a)b.classList.add('ok');});
+  const fb=document.getElementById('quiz-fb');
+  if(c===a){quizSt.score++;btn.classList.add('ok');fb.className='fb ok';fb.textContent='✓ CORRECTO — EL SELLO RESPONDE...';}
+  else{btn.classList.add('bad');fb.className='fb err';fb.textContent='✗ INCORRECTO — NEXUS SE REGOCIJA';}
+  fb.style.display='block';
+  if(quizSt.idx<quizSt.qs.length-1)document.getElementById('quiz-next-row').style.display='block';
+  else setTimeout(()=>{quizSt.score>=quizSt.min?sealOk(curP,quizSt.score,quizSt.total):sealErr(curP,quizSt.score,quizSt.total);},1200);
+}
+function quizNext(){quizSt.idx++;renderQuiz();}
+
+// ═══════════════════════════════════════════════════════════
+// WORD SEARCH ENGINE
+// ═══════════════════════════════════════════════════════════
+function loadWS(s){
+  wsSt={grid:s.data.grid,words:s.data.words,found:[],first:null};
+  document.getElementById('ws-head').textContent=`🔐 SELLO ${roman(s.id)} — ${s.title.toUpperCase()}`;
+  document.getElementById('ws-sub').textContent=s.sub;
+  renderWS();
+  go_raw('s-ws');flash();
+}
+function renderWS(){
+  const wEl=document.getElementById('ws-words');wEl.innerHTML='';
+  wsSt.words.forEach(w=>{
+    const t=document.createElement('div');t.className='wstag'+(wsSt.found.includes(w.w)?' fnd':'');
+    t.id='wt-'+w.w;t.textContent=w.w;wEl.appendChild(t);
+  });
+  const g=document.getElementById('ws-grid');g.style.gridTemplateColumns=`repeat(${wsSt.grid[0].length},1fr)`;g.innerHTML='';
+  wsSt.grid.forEach((row,r)=>row.forEach((ch,c)=>{
+    const cell=document.createElement('div');cell.className='wsc';cell.id=`wsc-${r}-${c}`;cell.textContent=ch;
+    wsSt.words.forEach(w=>{if(wsSt.found.includes(w.w))w.cells.forEach(([wr,wc])=>{if(wr===r&&wc===c)cell.classList.add('fnd');});});
+    cell.onclick=()=>wsClick(r,c);g.appendChild(cell);
+  }));
+}
+function wsClick(r,c){
+  const fb=document.getElementById('ws-fb');
+  if(!wsSt.first){
+    wsSt.first=[r,c];document.getElementById(`wsc-${r}-${c}`).classList.add('sel');
+  } else {
+    const sec=[r,c];let hit=false;
+    wsSt.words.forEach(w=>{
+      if(wsSt.found.includes(w.w))return;
+      const fM=w.cells.some(([wr,wc])=>wr===wsSt.first[0]&&wc===wsSt.first[1]);
+      const sM=w.cells.some(([wr,wc])=>wr===sec[0]&&wc===sec[1]);
+      if(fM&&sM){w.cells.forEach(([wr,wc])=>{const el=document.getElementById(`wsc-${wr}-${wc}`);if(el){el.classList.remove('sel');el.classList.add('fnd');}});
+       wsSt.found.push(w.w);const tag=document.getElementById('wt-'+w.w);if(tag)tag.classList.add('fnd');hit=true;}
+    });
+    const prevEl=document.getElementById(`wsc-${wsSt.first[0]}-${wsSt.first[1]}`);
+    if(prevEl&&!prevEl.classList.contains('fnd'))prevEl.classList.remove('sel');
+    wsSt.first=null;
+    if(!hit){fb.className='fb err';fb.textContent='✗ ESE PAR NO FORMA UNA PALABRA';fb.style.display='block';setTimeout(()=>fb.style.display='none',1500);}
+    else fb.style.display='none';
+    if(wsSt.found.length===wsSt.words.length)setTimeout(()=>sealOk(curP),800);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// MATCHING ENGINE
+// ═══════════════════════════════════════════════════════════
+function loadMatch(s){
+  matchSt={pairs:s.data.pairs,selTerm:null,matched:[]};
+  document.getElementById('match-head').textContent=`🔐 SELLO ${roman(s.id)} — ${s.title.toUpperCase()}`;
+  document.getElementById('match-sub').textContent=s.sub;
+  const defs=shuffleCopy(s.data.pairs);
+  const grid=document.getElementById('match-grid');
+  grid.innerHTML=`<div><div class="mctitle">TÉRMINOS</div><div id="match-terms"></div></div><div><div class="mctitle">DEFINICIONES</div><div id="match-defs"></div></div>`;
+  s.data.pairs.forEach((m,i)=>{
+    const el=document.createElement('div');el.className='mitem';el.id='mt-'+i;el.textContent=m.t;
+    el.onclick=()=>matchSelTerm(i);document.getElementById('match-terms').appendChild(el);
+  });
+  defs.forEach((m,i)=>{
+    const el=document.createElement('div');el.className='mitem';el.id='md-'+i;el.dataset.t=m.t;el.textContent=m.d;
+    el.onclick=()=>matchSelDef(i,m.t);document.getElementById('match-defs').appendChild(el);
+  });
+  document.getElementById('match-fb').style.display='none';
+  go_raw('s-match');flash();
+}
+function matchSelTerm(i){
+  if(document.getElementById('mt-'+i).classList.contains('mdone'))return;
+  document.querySelectorAll('#match-terms .mitem').forEach(e=>e.classList.remove('msel'));
+  matchSt.selTerm=i;document.getElementById('mt-'+i).classList.add('msel');
+}
+function matchSelDef(i,dt){
+  if(matchSt.selTerm===null)return;
+  if(document.getElementById('md-'+i).classList.contains('mdone'))return;
+  const ti=matchSt.selTerm,st=matchSt.pairs[ti].t;
+  const fb=document.getElementById('match-fb');
+  if(st===dt){
+    document.getElementById('mt-'+ti).classList.add('mdone');
+    document.getElementById('md-'+i).classList.add('mdone');
+    matchSt.matched.push(ti);matchSt.selTerm=null;fb.style.display='none';
+    if(matchSt.matched.length===matchSt.pairs.length)setTimeout(()=>sealOk(curP),600);
+  } else {
+    const te=document.getElementById('mt-'+ti),de=document.getElementById('md-'+i);
+    te.classList.add('merr');de.classList.add('merr');
+    fb.className='fb err';fb.textContent='✗ COMBINACIÓN INCORRECTA — NEXUS SE REGOCIJA';fb.style.display='block';
+    setTimeout(()=>{te.classList.remove('merr','msel');de.classList.remove('merr');fb.style.display='none';matchSt.selTerm=null;},1000);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// ORDERING ENGINE
+// ═══════════════════════════════════════════════════════════
+function loadOrder(s){
+  orderSt={correct:s.data.correct,slots:Array(s.data.correct.length).fill(null),bank:shuffleCopy(s.data.items)};
+  document.getElementById('order-head').textContent=`🔐 SELLO ${roman(s.id)} — ${s.title.toUpperCase()}`;
+  document.getElementById('order-sub').textContent=s.sub;
+  document.getElementById('order-inst').textContent=s.data.inst;
+  renderOrder();
+  go_raw('s-order');flash();
+}
+function renderOrder(){
+  const sEl=document.getElementById('order-slots');sEl.innerHTML='';
+  orderSt.slots.forEach((v,i)=>{
+    const s=document.createElement('div');s.className='oslot';
+    s.innerHTML=`<span class="onum">${i+1}.</span><span style="color:${v?'var(--cy)':'var(--brd)'}">${v||'— — — — —'}</span>`;
+    if(v){s.style.borderColor='rgba(0,255,255,.25)';s.style.cursor='pointer';s.onclick=()=>orderRm(i);}
+    sEl.appendChild(s);
+  });
+  const bEl=document.getElementById('order-bank');bEl.innerHTML='';
+  orderSt.bank.forEach(item=>{
+    const c=document.createElement('div');c.className='ochip'+(orderSt.slots.includes(item)?' used':'');
+    c.textContent=item;if(!orderSt.slots.includes(item))c.onclick=()=>orderAdd(item);
+    bEl.appendChild(c);
+  });
+  const full=orderSt.slots.every(s=>s!==null);
+  document.getElementById('order-check-btn').style.display=full?'inline-block':'none';
+  document.getElementById('order-fb').style.display='none';
+}
+function orderAdd(item){const i=orderSt.slots.findIndex(s=>s===null);if(i<0)return;orderSt.slots[i]=item;renderOrder();}
+function orderRm(i){orderSt.slots[i]=null;renderOrder();}
+function orderReset(){orderSt.slots=Array(orderSt.correct.length).fill(null);renderOrder();}
+function orderCheck(){
+  const ok=orderSt.slots.every((v,i)=>v===orderSt.correct[i]);
+  const fb=document.getElementById('order-fb');
+  if(ok){fb.className='fb ok';fb.textContent='✓ ¡SECUENCIA CORRECTA! EL SELLO VIBRA...';fb.style.display='block';setTimeout(()=>sealOk(curP),1300);}
+  else{
+    fb.className='fb err';fb.textContent='✗ SECUENCIA INCORRECTA — REVISA EL ORDEN';fb.style.display='block';
+    const slots=document.querySelectorAll('.oslot');
+    orderSt.slots.forEach((v,i)=>{if(v&&v!==orderSt.correct[i]&&slots[i]){slots[i].style.color='var(--r)';}});
+    setTimeout(()=>orderReset(),2200);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// FILL-IN ENGINE
+// ═══════════════════════════════════════════════════════════
+function loadFill(s){
+  fillSt={sents:s.data.sentences,min:s.data.min};
+  document.getElementById('fill-head').textContent=`🔐 SELLO ${roman(s.id)} — ${s.title.toUpperCase()}`;
+  document.getElementById('fill-sub').textContent=s.sub;
+  const c=document.getElementById('fill-sents');c.innerHTML='';
+  document.getElementById('fill-fb').style.display='none';
+  s.data.sentences.forEach((f,i)=>{
+    const d=document.createElement('div');d.className='fsent';
+    d.innerHTML=`${f.pre} <input class="fblank" id="fi-${i}" type="text" autocomplete="off" placeholder="..."> ${f.post}`;
+    c.appendChild(d);c.appendChild(document.createElement('br'));
+  });
+  go_raw('s-fill');flash();
+}
+function fillCheck(){
+  let ok=0;
+  fillSt.sents.forEach((f,i)=>{
+    const inp=document.getElementById('fi-'+i);if(!inp)return;
+    const ans=inp.value.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    const exp=f.blank.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    if(ans===exp||ans.replace(/\s+/g,'')===exp.replace(/\s+/g,'')){
+      ok++;inp.style.borderColor='var(--g)';inp.style.color='var(--g)';
+    } else {inp.style.borderColor='var(--r)';inp.style.color='var(--r)';}
+  });
+  const fb=document.getElementById('fill-fb');
+  if(ok>=fillSt.min){fb.className='fb ok';fb.textContent=`✓ ${ok}/${fillSt.sents.length} CORRECTAS — ¡SELLO DESBLOQUEADO!`;fb.style.display='block';setTimeout(()=>sealOk(curP,ok,fillSt.sents.length),1400);}
+  else{fb.className='fb err';fb.textContent=`✗ ${ok}/${fillSt.sents.length} CORRECTAS — NECESITAS MÁS`;fb.style.display='block';setTimeout(()=>loadFill(SEALS[curP-1]),2500);}
+}
+
+// ═══════════════════════════════════════════════════════════
+// TIMER
+// ═══════════════════════════════════════════════════════════
+function startTimer(sec){
+  clearTimer();
+  let remaining=sec;
+  function tick(){
+    const m=Math.floor(remaining/60),s=remaining%60;
+    const el=document.getElementById('quiz-timer');
+    if(el){
+      el.textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+      el.className='timer '+(remaining<=60?'urgent':'ok-t');
+    }
+    if(remaining<=0){clearTimer();sealErr(curP,quizSt.score,quizSt.total);return;}
+    remaining--;timerInt=setTimeout(tick,1000);
+  }tick();
+}
+function clearTimer(){if(timerInt){clearTimeout(timerInt);timerInt=null;}}
+
+// ═══════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════
+tw('intro-txt',
+ 'SISTEMA DE ALERTA DIMENSIONAL — ACTIVADO\n\nSe ha detectado una brecha en el tejido de la realidad. La entidad NEXUS amenaza con expandir su portal y consumir el conocimiento biológico de este mundo.\n\nDoce sellos. Tres actos. Sesenta minutos.\n\nIdentifícate, agente.',
+ 20
+);
+</script>
+</body>
+</html>
